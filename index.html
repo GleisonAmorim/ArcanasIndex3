@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarot Sorteio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <button id="btnVirarCostas" onclick="virarParaCostas()">🔄</button>
+
+    <!-- Lista suspensa para selecionar o jogo -->
+    <select id="seletorJogo" onchange="carregarCartas()">
+        <option value="Jogo">Select</option>
+        <option value="Avowed">Avowed</option>
+        <option value="Baldur's Gate 3">Baldur's Gate 3</option>
+        <option value="Dragon's Dogma 2">Dragon's Dogma 2</option>
+        <option value="Expedition 33">Expedition 33</option>
+        <option value="Forspoken">Forspoken</option>
+        <option value="Ghostwire Tokyo">Ghostwire Tokyo</option>
+        <option value="Genshin Impact">Genshin Impact</option>
+        <option value="Hogwarts Legacy">Hogwarts Legacy</option>
+        <option value="Infinity Nikki">Infinity Nikki</option>
+        <option value="Magic The Gathering">Magic: The Gathering</option>
+        <option value="Nightingale">Nightingale</option>
+        <option value="Skyblivion">Skyblivion</option>
+        <option value="Wuthering Waves">Wuthering Waves</option>
+
+
+    </select>
+
+    <audio id="somSorteio" src="ms.mp3" preload="auto"></audio>
+
+    <div class="container">
+        <div class="card-container">
+            <div class="card" id="card">
+                <div class="card-face card-back"></div>
+                <div class="card-face card-front">
+                    <img id="card-image" src="" alt="Carta de Tarot"
+                        style="max-width: 100%; max-height: 100%; border-radius: 10px;">
+                </div>
+            </div>
+            <button class="button-overlay" onclick="sortearCarta()"></button>
+        </div>
+    </div>
+    <div id="infoCarta"></div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

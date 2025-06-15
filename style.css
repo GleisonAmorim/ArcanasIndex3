@@ -1,0 +1,212 @@
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+        }
+
+        body {
+            background-image: url('principal.gif');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: contain;
+            /* MOSTRA A IMAGEM INTEIRA */
+            background-color: black;
+            /* Mostra faixas pretas se necessário */
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 20px;
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 5cm;
+            /* empurra para baixo */
+            transform: translate(0.8cm, 0);
+            /* só no eixo X */
+        }
+
+
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: transparent;
+            color: transparent;
+            ;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: transparent;
+            /* Mantém transparente ao passar o mouse */
+        }
+
+        .card-container {
+            position: absolute;
+            /* para poder mover pela tela */
+            top: 100px;
+            /* posição inicial */
+            left: 100px;
+            /* posição inicial */
+            width: 180px;
+            height: 320px;
+            margin: 0;
+            /* remova a margem para evitar conflito */
+            perspective: 1000px;
+            cursor: grab;
+            /* cursor que indica que pode arrastar */
+        }
+
+        .card-container:active {
+            cursor: grabbing;
+            /* cursor durante o arrasto */
+        }
+
+        .card-back {
+            background-image: url('fd2.jpg');
+            background-size: cover;
+            background-position: right center;
+            /* Move a imagem para a direita */
+            transform: rotateY(180deg);
+        }
+
+        .card {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform-style: preserve-3d;
+            transition: transform 1.5s ease-in-out;
+            /* Animação mais suave */
+            transform: rotateY(180deg);
+        }
+
+        .card.is-flipped {
+            transform: rotateY(0);
+        }
+
+        .card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+
+        }
+
+        .card-front img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+            /* Sombra da imagem */
+
+
+        }
+
+
+        /* Botão transparente que cobre o container da carta */
+        .button-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        #btnVirarCostas {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 999;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            padding: 1px 1px;
+            border-radius: 8px;
+            font-size: 14px;
+            cursor: pointer;
+            box-shadow: 0 0 5px black;
+            transition: background-color 0.3s;
+        }
+
+        #btnVirarCostas:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        #btnVoltar {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 999;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 8px;
+            font-size: 14px;
+            cursor: pointer;
+            box-shadow: 0 0 5px black;
+            transition: background-color 0.3s;
+        }
+
+        #btnVoltar:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        #seletorJogo {
+            position: fixed;
+            top: 10%;
+            right: 20px;
+            transform: translateY(-50%);
+            padding: 5px 10px;
+            font-size: 9px;
+            width: 50px;
+            border-radius: 8px;
+            border: 2px solid #4b24e9;
+            background: linear-gradient(to right, #aa10a05e, #7f00b1);
+            color: white;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            appearance: none;
+            /* Tira o estilo padrão (em alguns browsers) */
+        }
+
+        #seletorJogo option {
+            background-color: black;
+            /* Cor de fundo das opções (funciona só no Firefox) */
+            color: white;
+            border-radius: 8px;
+            /* Poucos navegadores respeitam */
+        }
+
+        #infoCarta {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            color: white;
+            font-size: 9px;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 8px 12px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px black;
+            max-width: 250px;
+            word-wrap: break-word;
+        }
