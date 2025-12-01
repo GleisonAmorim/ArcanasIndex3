@@ -1,0 +1,5 @@
+1 Utilizar o Padronizador Py para colocar a foto ima de fundo
+2 Utilizar o Transformador Py para colocar no formato jpeg
+3 Colocar o nome da pasta que irá subir no github na sessão "    <!-- Lista suspensa para selecionar o jogo -->
+" dentro do html, o código java irá fazer o resto.
+4 IMPORTANTE- nomes dos arquivos tem que seguir  o padrão teclado numerico 1,2,3,4,5,6,7,8,9,0,q,w,e,r,t,y,u,i,o,p,a,s,d
